@@ -52,13 +52,13 @@ An easier method is to use the *mona* plugin. For quick installation instruction
 
 Check the mona output for the offset value.
 
-![alt text][images/findingtheoffset.png]
+![alt text](images/findingtheoffset.png)
 
 ## Step 3. Confirming EIP location
 
 This step basically means that you are overwriting EIP correctly. You can do this using [fuzzConfirmEIP.py](scripts/fuzzConfirmEIP.py) script. This fills the buffer all the way until it hits EIP with the character "A" and then uses "B" for EIP only. This allows us confirm that we are overwriting EIP correctly. The script runs correctly if you see 0x42424242 in the EIP register
 
-![alt text][images/confirmEIP.png]
+![alt text](images/confirmEIP.png)
 
 ## Step 4. Bad Characters
 
@@ -85,7 +85,7 @@ Run [fuzzBadCharsTest.py](scripts/fuzzBadCharsTest.py) script inputting the deta
 
 You should get a list of possible badchars from mona, there may be no bad chars
 
-![alt text][images/badchars1.png]
+![alt text](images/badchars1.png)
 
 TIP: TAKE NOTE OF THE BAD CHARACTERS!
 
@@ -99,7 +99,7 @@ Change the [fuzzBadCharsRemoved.py](scripts/BadCharsRemoved.py) script removing 
 
 You should receive a message similar to below
 
-![alt text][images/badchars2.png]
+![alt text](images/badchars2.png)
 
 ## Step 5. Finding a JMP ESP
 
@@ -109,7 +109,7 @@ Next we need to find a JMP instruction to place in EIP. This will tell the progr
 
 You can see here a list of memory locations and whether or not they have memory protection included
 
-![alt text][images/memprotection.png]
+![alt text](images/memprotection.png)
 
 If the application itself does not have a jump instruction available that is coded within the application, there may be one available within DLLs which are called by it. To check this use
 
@@ -117,7 +117,7 @@ If the application itself does not have a jump instruction available that is cod
 
 Look for a DLL that doesn't contain the application safeguards as above
 
-![alt text][images/memprotectionDLL.png]
+![alt text](images/memprotectionDLL.png)
 
 Now look for a JMP instruction within that DLL e.g from above
 
