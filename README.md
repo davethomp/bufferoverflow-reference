@@ -212,7 +212,7 @@ Make sure to start up your netcat listener `nc -lvnp 4444`
 
 Start the executable without Immunity running. It should generate a reverse shell similar to below
 
-[Image]
+![alt text](images/netcattesting.png)
 
 # Troubleshooting
 
